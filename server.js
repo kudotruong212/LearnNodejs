@@ -1,14 +1,24 @@
-const http = require('node:http');
+const express = require('express')
+// import express from 'express'
+const app = express();
+const port = 8080;
 
-const hostname = '127.0.0.1';
-const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n This is a simple HTTP server.\n');
-});
+// khai bao route
+app.get('/abc', (req, res) => {
+  res.send('Hello World!')
+})
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.get('/xinchao', (req, res) =>{
+  res.send('Xin chao cac ban')
+})
+
+app.get('/text', (req, res) =>{
+  res.send("<h1>Day la the h1</h1><h2>Day la the h2</h2>")
+})
+
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
