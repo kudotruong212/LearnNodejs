@@ -11,10 +11,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 
-console.log(process.env)
 // khai bao route
 app.get('/abc', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World! dasdasdasd')
 })
 
 app.get('/xinchao', (req, res) =>{
